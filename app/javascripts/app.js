@@ -1,11 +1,11 @@
-const greeter = Greeter.deployed();
+const caduceus = Caduceus.deployed();
 var accounts;
 var account;
 
 console.log('hellow');
-console.log(greeter);
+console.log(caduceus);
 
-function getGreeter() {
+/*function getGreeter() {
     let greeeting_element = document.getElementById("greeting");
     greeter.greet().then((res) => {
         console.log('coucou : ' + res);
@@ -27,7 +27,7 @@ function setGreeter() {
         console.log(e);
         setStatus("Error setGreeter(); see log.");
     });
-};
+};*/
 
 
 function setStatus(message) {

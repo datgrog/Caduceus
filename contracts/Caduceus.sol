@@ -20,8 +20,8 @@ contract Caduceus {
  *      - (0:1) <=> (false;true)
  * TEST :
  *                   | age | bp | sg | al | su | bgr | bu | sod | pcv | wc | rc | sc | pot | hemo | rbc | pc | pcc | ba | htn | dm | cad | appet | pe | ane |
- * caduceus.addPatient([60,  80,  25,   0,   0,   131,  10, 146,  41, 10700, 99,  99,  99,    99,    1,   1,   0,    0,   0,    0,   0,     1,     0,   0]);
- * [60,80,25,0,0,131,10,146,41,10700,99,99,99,99,1,1,0,0,0,0,0,1,0,0]
+ * caduceus.addPatient([60,  80,  25,   0,   0,   131,  10, 146,  41, 10700, 510, 50,  500,  1450,   1,   1,   0,    0,   0,    0,   0,     1,     0,   0]);
+ * [60,80,25,0,0,131,10,146,41,10700,510,50,500,1450,1,1,0,0,0,0,0,1,0,0]
  */
 
     struct Patient {
@@ -40,14 +40,13 @@ contract Caduceus {
         return nextPatientId;
     }
 
-    function addPatient(uint16[24] patientData) returns (uint id) {
+    function addPatient(uint16[24] patientData) {
         var patient = patients[nextPatientId];
 
         patient.contact = tx.origin;
         patient.kidneyData = patientData;
 
         nextPatientId++;
-        id = nextPatientId;
     }
 
     function getKidneyDataFromPatientId(uint256 patientId) constant returns (uint16[24] kidneyData) {
