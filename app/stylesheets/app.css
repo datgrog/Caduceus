@@ -5,6 +5,8 @@
     font-style: normal;
 }
 
+/* CONSTANT CSS STYLE */
+
 body {
     margin: 0px;
     padding: 0px;
@@ -14,6 +16,14 @@ body {
     flex-direction: column;
     font-family: 'Source Sans Pro', sans-serif;
 }
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none; color: #000000;
+}
+
+/* FIN CONSTANT CSS STYLE */
+
+/* HEADER */
 
 header {
     display: flex !important; /* override bootstrap */
@@ -48,6 +58,10 @@ header div i {
     margin: 0px;
 }
 
+/* FIN HEADER */
+
+/* PAGE CONTENT */
+
 main.wrapper {
     margin: 15px 15px 0px 15px;
     display: flex !important; /* override bootstrap */
@@ -57,37 +71,67 @@ main.wrapper {
 }
 
 nav {
-    width: 50em;
+    width: 135px;
     display: flex !important; /* override bootstrap */
     flex-direction: column;
     justify-content: space-around; /* axe principal */
     align-items: center; /* axe secondaire */
     height: 125px;
 
-    border: 1px solid #666;
+    border: 1px solid #3498db;
     background: #fff;
     border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
 }
 
 nav > a i {
     color: #000000;
 }
 
+section div.title {
+    color: #FFFFFF;
+    background-color: #2ecc71;
+}
+
+section div.title h2 {
+    font-size: 28px;
+    margin: 10px 0 10px 10px;
+}
+
+section div.content {
+    padding: 10px;
+}
+
 section.content {
     margin-left: 15px;
-    min-height: 25em;
-    background-color: aquamarine;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+
+    border: 1px solid #2ecc71;
+    background: #fff;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
 }
 
 section.content footer {
     margin-top: auto;
     align-self: flex-end;
 }
+
+table.table {
+    margin: 0px;
+}
+
+table.hide > * {
+    display: none;
+}
+
+/* FIN PAGE CONTENT */
+
+/* FOOTER */
 
 footer {
     margin-top: auto;
@@ -106,52 +150,4 @@ footer p {
     margin: 0px;
 }
 
-/*
-body {
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-top: 10%;
-  font-family: "Open Sans", sans-serif;
-}
-
-label {
-  display: inline-block;
-  width: 120px;
-}
-
-input {
-  width: 500px;
-  padding: 5px;
-  font-size: 16px;
-}
-
-button {
-  font-size: 16px;
-  padding: 5px;
-}
-
-h1, h2 {
-  display: inline-block;
-  vertical-align: middle;
-  margin-top: 0px;
-  margin-bottom: 10px;
-}
-
-h2 {
-  color: #AAA;
-  font-size: 32px;
-}
-
-h3 {
-  font-weight: normal;
-  color: #AAA;
-  font-size: 16px;
-}
-
-.black {
-  color: black;
-}
-
-#balance {
-  color: black;
-}*/
+/* FOOTER */
