@@ -78,16 +78,29 @@ nav {
     align-items: center; /* axe secondaire */
     height: 125px;
 
-    border: 1px solid #666;
+    border: 1px solid #3498db;
     background: #fff;
     border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
 }
 
 nav > a i {
     color: #000000;
+}
+
+section div.title {
+    color: #FFFFFF;
+    background-color: #2ecc71;
+}
+
+section div.title h2 {
+    font-size: 28px;
+    margin: 10px 0 10px 10px;
+}
+
+section div.content {
+    padding: 10px;
 }
 
 section.content {
@@ -96,13 +109,11 @@ section.content {
     flex-direction: column;
     flex-grow: 1;
 
-    padding: 10px;
-    border: 1px solid #666;
+    border: 1px solid #2ecc71;
     background: #fff;
     border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
 }
 
 section.content footer {

@@ -8,6 +8,8 @@ function updateTable(kidneyData) {
     // kidneyData [60,80,25,0,0,131,10,146,41,10700,510,50,500,1450,1,1,0,0,0,0,0,1,0,0]);
     let kidneyDataIdx = 0;
 
+    console.log(kidneyData.toString());
+
     for(let tableIndex=0; tableIndex < NB_TABLE; tableIndex++) {
         for(let dataIdx=0; dataIdx < DOMtable[tableIndex].childElementCount; dataIdx++) {
             // /!\ STRING
@@ -71,12 +73,17 @@ function getMyKidneyData() {
         });
     });
 
-};
+}
 
-function setStatus(message) {
-    var status = document.getElementById("status");
-    status.innerHTML = message;
-};
+function toggleTable() {
+    return new Promise(function(resolve) {
+        for(let tableIndex=0; tableIndex < NB_TABLE; tableIndex++) {
+            // make class 'hide' disappear
+            DOMtable[tableIndex].parentElement.parentElement.className = "table";
+            resolve();
+        }
+    });
+}
 
 window.onload = function() {
 
@@ -99,15 +106,10 @@ window.onload = function() {
 
         accounts = accs;
         account = accounts[0];
-        
+
         getMyKidneyData()
             .then(updateTable)
-            .then(function() {
-                for(let tableIndex=0; tableIndex < NB_TABLE; tableIndex++) {
-                    // make class 'hide' disappear
-                    DOMtable[tableIndex].parentElement.parentElement.className = "table";
-                }
-            })
+            .then(toggleTable)
             .catch(function (error) {
                 console.log(error);
             })

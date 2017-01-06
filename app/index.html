@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
   </head>
   <body>
+
     <header>
         <h1>Caduceus Prototype</h1>
         <span id="spacing"></span>
@@ -18,132 +19,107 @@
           <i id="metamask" class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
         </div>
     </header>
+
     <main class="wrapper">
+
       <nav id="navigation">
         <a href="#"><i class="fa fa-user fa-2x" aria-hidden="true"></i>    Patient</a>
         <a href="#"><i class="fa fa-stethoscope fa-2x" aria-hidden="true"></i>     Médecin</a>
       </nav>
+
       <section class="content">
-        <h2>Mes données de santée</h2>
-        <p id="result"></p>
-        <table class="table hide">
-          <thead class="thead-inverse">
-          <tr>
-            <th>Age (years)</th>
-            <th>Blood Pressure (mm/Hg)</th>
-            <th>Specific Gravity</th>
-            <th>Albumin</th>
-            <th>Sugar</th>
-            <th>Red Blood Cells</th>
-            <th>Blood Urea (mgs/dl)</th>
-            <th>Sodium (mEq/L)</th>
-            <th>Packed Cell Volume</th>
-            <th>White Blood Cell (cells/cumm)</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr id="decimal">
-            <td>60</td>
-            <td>80</td>
-            <td>25</td>
-            <td>0</td>
-            <td>0</td>
-            <td>131</td>
-            <td>10</td>
-            <td>146</td>
-            <td>41</td>
-            <td>10700</td>
-          </tr>
-          </tbody>
-        </table>
+        <div class="title">
+          <h2>Mes données de santé</h2>
+        </div>
+        <div class="content">
+          <table class="table hide">
+            <thead class="thead-inverse">
+            <tr>
+              <th>Age (years)</th>
+              <th>Blood Pressure (mm/Hg)</th>
+              <th>Specific Gravity</th>
+              <th>Albumin</th>
+              <th>Sugar</th>
+              <th>Red Blood Cells</th>
+              <th>Blood Urea (mgs/dl)</th>
+              <th>Sodium (mEq/L)</th>
+              <th>Packed Cell Volume</th>
+              <th>White Blood Cell (cells/cumm)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="decimal">
+              <td>60</td>
+              <td>80</td>
+              <td>25</td>
+              <td>0</td>
+              <td>0</td>
+              <td>131</td>
+              <td>10</td>
+              <td>146</td>
+              <td>41</td>
+              <td>10700</td>
+            </tr>
+            </tbody>
+          </table>
 
-        <table class="table hide">
-          <thead class="thead-inverse">
-          <tr>
-            <th>Red Blood Cell (millions/cmm)</th>
-            <th>Serum Creatinine (mgs/dl)</th>
-            <th>Potassium (mEq/L)</th>
-            <th>Hemoglob (hemo in gms)</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr id="float">
-            <td>5.10</td>
-            <td>0.5</td>
-            <td>5</td>
-            <td>14.5</td>
-          </tr>
-          </tbody>
-        </table>
+          <table class="table hide">
+            <thead class="thead-inverse">
+            <tr>
+              <th>Red Blood Cell (millions/cmm)</th>
+              <th>Serum Creatinine (mgs/dl)</th>
+              <th>Potassium (mEq/L)</th>
+              <th>Hemoglob (hemo in gms)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="float">
+              <td>5.10</td>
+              <td>0.5</td>
+              <td>5</td>
+              <td>14.5</td>
+            </tr>
+            </tbody>
+          </table>
 
-        <table class="table hide">
-          <thead class="thead-inverse">
-          <tr>
-            <th>Red Blood Cells</th>
-            <th>Pus Cell</th>
-            <th>Pus Cell clumps</th>
-            <th>Bacteria</th>
-            <th>Hypertension</th>
-            <th>Diabetes Mellitus</th>
-            <th>Coronary Artery Disease</th>
-            <th>Appetite</th>
-            <th>Pedal Edema</th>
-            <th>Anemia</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr id="nominal">
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-          </tr>
-          </tbody>
-        </table>
+          <table class="table hide">
+            <thead class="thead-inverse">
+            <tr>
+              <th>Red Blood Cells</th>
+              <th>Pus Cell</th>
+              <th>Pus Cell clumps</th>
+              <th>Bacteria</th>
+              <th>Hypertension</th>
+              <th>Diabetes Mellitus</th>
+              <th>Coronary Artery Disease</th>
+              <th>Appetite</th>
+              <th>Pedal Edema</th>
+              <th>Anemia</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="nominal">
+              <td>?</td>
+              <td>?</td>
+              <td>?</td>
+              <td>?</td>
+              <td>?</td>
+              <td>?</td>
+              <td>?</td>
+              <td>?</td>
+              <td>?</td>
+              <td>?</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
 
       </section>
     </main>
+
     <footer>
       <p>Caduceus Project 2016-2017 by Stefan Angoso, Stéfane Bala, Josph Hé, Antoine Guidis.</p>
     </footer>
-<!--    <div class="container">
-      <div class="row flex-items-xs-middle">
-        <div class="col-xs">
-          One of three columns
-        </div>
-        <div class="col-xs">
-          One of three columns
-        </div>
-        <div class="col-xs">
-          One of three columns
-        </div>
-      </div>
-    </div>
-    <h1>CADUCEUS</h1>
-    <h2>First Truffle Dapp Try</h2>
-    <h3>You have <span class="black"><span id="balance"></span> META</span></h3>
 
-
-    <h1>Greeting getString</h1>
-    <h3>Current greeting variable content <span id="greeting" class="black"></span></h3>
-    <button onclick="getGreeter()">getString</button>
-
-
-
-    <br><label for="greeting_content">Another string</label><input type="text" id="greeting_content" placeholder="Something else"></input>
-
-    <button onclick="setGreeter()">setString</button>
-
-    <span id="status"></span>-->
-    <!--   <br><label for="receiver">To Address:</label><input type="text" id="receiver" placeholder="e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"></input>
-      <br><br><button id="send" onclick="sendCoin()">Send MetaCoin</button>
-      <br><br>
-      <span id="status"></span> -->
   </body>
 </html>
