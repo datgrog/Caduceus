@@ -62,6 +62,19 @@ function updateTable(kidneyData) {
     }
 }
 
+// SHOULD NOT BE USED AFTER EVENT BECAUSE MAPPING ADDRESS NOT ID
+function isAccountRegistered() {
+    return new Promise(function(resolve) {
+
+        caduceus.getNextPatientId().then(function(maxPatientId) {
+            resolve(maxPatientId.toString());
+        }).catch(function(e) {
+            console.log(e);
+            setStatus("Error getMyKidneyData(); see log.");
+        });
+    });
+}
+
 function getMyKidneyData() {
     return new Promise(function(resolve) {
 
@@ -92,7 +105,6 @@ window.onload = function() {
     DOMtable.push(document.getElementById('nominal'));
 
     web3.eth.getAccounts(function(err, accs) {
-        console.log("test");
         if (err != null) {
             alert("There was an error fetching your accounts.");
             return;
@@ -106,6 +118,15 @@ window.onload = function() {
 
         accounts = accs;
         account = accounts[0];
+
+        // NOP
+/*        isAccountRegistered().then(function(maxPatientId) {
+            for(let patientId = 0; patientId < maxPatientId.valueOf(); patientId++) {
+                caduceus.getContactFromPatientId(patientId).then(function(address) {
+                    console.log(address);
+                })
+            }
+        });*/
 
         getMyKidneyData()
             .then(updateTable)
