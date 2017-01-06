@@ -7,6 +7,13 @@ module.exports = {
     "app.css": [
       "stylesheets/app.css"
     ],
+    "bootstrap.min.css": [
+        "stylesheets/bootstrap.min.css"
+    ],
+    "font-awesome.min.css": [
+        "stylesheets/font-awesome.min.css"
+    ],
+    "fonts/": "fonts/",
     "images/": "images/"
   },
   rpc: {

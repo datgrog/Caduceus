@@ -1,3 +1,112 @@
+@font-face {
+    font-family: 'Infinity';
+    src: url('../fonts/infinity.ttf?v=4.7.0') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+header {
+    display: flex !important; /* override bootstrap */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start; /* axe principal */
+    align-items: center; /* axe secondaire */
+    background-color: #3498db;
+    padding: 0 20px;
+    /*height: 100px;*/
+}
+
+header h1 {
+    color: #FFFFFF;
+    font-family: 'Infinity', 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    margin: 0px;
+}
+
+header span#spacing {
+    flex-grow: 1;
+    background-color: #01315a;
+    margin: 0px;
+}
+
+header div {
+    display: flex !important; /* override bootstrap */
+}
+
+header div i {
+    color: #FFFFFF;
+    align-self: center;
+    margin: 0px;
+}
+
+main.wrapper {
+    margin: 15px 15px 0px 15px;
+    display: flex !important; /* override bootstrap */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start; /* axe secondaire */
+}
+
+nav {
+    width: 50em;
+    display: flex !important; /* override bootstrap */
+    flex-direction: column;
+    justify-content: space-around; /* axe principal */
+    align-items: center; /* axe secondaire */
+    height: 125px;
+
+    border: 1px solid #666;
+    background: #fff;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
+}
+
+nav > a i {
+    color: #000000;
+}
+
+section.content {
+    margin-left: 15px;
+    min-height: 25em;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+}
+
+section.content footer {
+    margin-top: auto;
+    align-self: flex-end;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    background-color: #3498db;
+    height: 50px;
+    display: flex !important; /* override bootstrap */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center; /* axe principal */
+    align-items: center; /* axe secondaire */
+}
+
+footer p {
+    color: #FFFFFF;
+    margin: 0px;
+}
+
+/*
 body {
   margin-left: 25%;
   margin-right: 25%;
@@ -45,4 +154,4 @@ h3 {
 
 #balance {
   color: black;
-}
+}*/

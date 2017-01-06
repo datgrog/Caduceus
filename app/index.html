@@ -1,29 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>CADUCEUS - Default Truffle App</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href="./bootstrap.min.css" rel='stylesheet' type='text/css'>
+    <link href="./font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href="./app.css" rel='stylesheet' type='text/css'>
     <script src="./app.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
   </head>
   <body>
+    <header>
+        <h1>Caduceus Prototype</h1>
+        <span id="spacing"></span>
+        <div>
+          <img src="./images/metamask-64.png" alt="metamask">
+          <i id="metamask" class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+        </div>
+    </header>
+    <main class="wrapper">
+      <nav id="navigation">
+        <a href="#"><i class="fa fa-user fa-2x" aria-hidden="true"></i>    Patient</a>
+        <a href="#"><i class="fa fa-stethoscope fa-2x" aria-hidden="true"></i>     Médecin</a>
+      </nav>
+      <section class="content">
+        <h2>Section header</h2>
+        <p>Morbi quis elementum mi, ac tincidunt est. Vivamus blandit magna at nulla consequat aliquet. Aenean id velit varius, pulvinar massa bibendum, fermentum velit. Aenean at tristique arcu. Donec volutpat nisi ut ligula egestas, luctus condimentum nibh finibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi vel orci vulputate magna dapibus eleifend non ac est. Aenean a nisi feugiat, venenatis velit at, tristique elit. Nulla posuere fermentum libero a sollicitudin. Phasellus tellus nunc, luctus id neque quis, venenatis ornare odio. Aliquam volutpat aliquet augue, at blandit mi posuere eu. Quisque elit tellus, iaculis eu metus sit amet, laoreet fringilla nunc. Maecenas a nisl quis nulla lacinia tempor. Donec consectetur tincidunt lorem in porttitor. Vestibulum lacinia vitae elit vitae feugiat.</p>
+        <footer>Footer de la section fait despi frr</footer>
+      </section>
+    </main>
+    <footer>
+      <p>Caduceus Project 2016-2017 by Stefan Angoso, Stéfane Bala, Josph Hé, Antoine Guidis.</p>
+    </footer>
+<!--    <div class="container">
+      <div class="row flex-items-xs-middle">
+        <div class="col-xs">
+          One of three columns
+        </div>
+        <div class="col-xs">
+          One of three columns
+        </div>
+        <div class="col-xs">
+          One of three columns
+        </div>
+      </div>
+    </div>
     <h1>CADUCEUS</h1>
     <h2>First Truffle Dapp Try</h2>
     <h3>You have <span class="black"><span id="balance"></span> META</span></h3>
 
-    <br><br>
+
     <h1>Greeting getString</h1>
     <h3>Current greeting variable content <span id="greeting" class="black"></span></h3>
     <button onclick="getGreeter()">getString</button>
 
-    <br><br>
-    <h1>Greeting setString</h1>
-    <br>
+
+
     <br><label for="greeting_content">Another string</label><input type="text" id="greeting_content" placeholder="Something else"></input>
-    <br><br>
+
     <button onclick="setGreeter()">setString</button>
-    <br>
-    <span id="status"></span>
+
+    <span id="status"></span>-->
     <!--   <br><label for="receiver">To Address:</label><input type="text" id="receiver" placeholder="e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"></input>
       <br><br><button id="send" onclick="sendCoin()">Send MetaCoin</button>
       <br><br>
