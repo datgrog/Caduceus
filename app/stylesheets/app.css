@@ -60,6 +60,41 @@ header div i {
 
 /* FIN HEADER */
 
+/* FORMULAIRE */
+
+section#formulaire {
+    margin: 15px 15px 0px 15px;
+}
+
+div#form {
+    display: flex !important; /* override bootstrap */
+}
+
+div.field {
+    display: flex;
+    flex-direction: column;
+    /*border: 1px solid #000000;*/
+    background: #fff;
+}
+
+div.titleField {
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+div.titleField h2 {
+    text-align: center;
+    margin: 10px 0 10px 0;
+    font-size: 16px;
+}
+
+div.field div.input-group {
+    padding: 10px;
+}
+
+/* FIN FORMULAIRE */
+
+
 /* PAGE CONTENT */
 
 main.wrapper {
@@ -107,7 +142,6 @@ section.content {
     margin-left: 15px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 
     border: 1px solid #2ecc71;
     background: #fff;

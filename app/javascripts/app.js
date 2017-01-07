@@ -4,6 +4,20 @@ var DOMtable = [];
 var accounts;
 var account;
 
+function disableInput(el) {
+    // console.log(el.parentElement.nextElementSibling.value);
+    let inputState = el.parentElement.nextElementSibling.disabled;
+
+    el.parentElement.nextElementSibling.disabled = !inputState;
+
+    if(!inputState) {
+        el.parentElement.nextElementSibling.placeholder = 'NA';
+        el.parentElement.nextElementSibling.value = null;
+    } else {
+        el.parentElement.nextElementSibling.placeholder = '';
+    }
+}
+
 function updateTable(kidneyData) {
     // kidneyData [60,80,25,0,0,131,10,146,41,10700,510,50,500,1450,1,1,0,0,0,0,0,1,0,0]);
     let kidneyDataIdx = 0;
