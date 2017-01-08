@@ -1,48 +1,231 @@
+@font-face {
+    font-family: 'Infinity';
+    src: url('../fonts/infinity.ttf?v=4.7.0') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* CONSTANT CSS STYLE */
+
 body {
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-top: 10%;
-  font-family: "Open Sans", sans-serif;
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
-label {
-  display: inline-block;
-  width: 120px;
+p {
+    margin: 0;
+    padding: 0;
 }
 
-input {
-  width: 500px;
-  padding: 5px;
-  font-size: 16px;
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none; color: #000000;
 }
 
-button {
-  font-size: 16px;
-  padding: 5px;
+/* FIN CONSTANT CSS STYLE */
+
+/* HEADER */
+
+header {
+    display: flex !important; /* override bootstrap */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start; /* axe principal */
+    align-items: center; /* axe secondaire */
+    background-color: #3498db;
+    padding: 0 20px;
+    /*height: 100px;*/
 }
 
-h1, h2 {
-  display: inline-block;
-  vertical-align: middle;
-  margin-top: 0px;
-  margin-bottom: 10px;
+header h1 {
+    color: #FFFFFF;
+    font-family: 'Infinity', 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    margin: 0px;
 }
 
-h2 {
-  color: #AAA;
-  font-size: 32px;
+span.spacing {
+    flex-grow: 1;
+/*    background-color: #01315a;*/
+    margin: 0px;
 }
 
-h3 {
-  font-weight: normal;
-  color: #AAA;
-  font-size: 16px;
+header div {
+    display: flex !important; /* override bootstrap */
 }
 
-.black {
-  color: black;
+header div i {
+    color: #FFFFFF;
+    align-self: center;
+    margin: 0px;
 }
 
-#balance {
-  color: black;
+/* FIN HEADER */
+
+/* FORMULAIRE */
+
+section#formulaire {
+    margin: 15px;
+    flex-grow: 0;
 }
+
+form {
+    display: flex !important; /* override bootstrap */
+}
+
+div.field {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    min-width: 110px;
+    flex-grow: 1;
+    /*border: 1px solid #000000;*/
+}
+
+div.titleField {
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+div.titleField h2 {
+    text-align: center;
+    margin: 10px 0 10px 0;
+    font-size: 16px;
+}
+
+div.field div.input-group {
+    padding: 10px;
+}
+
+div.nominal {
+    align-self: center;
+}
+
+div#submit {
+    margin: 0 15px 15px 15px;
+    display: flex !important; /* override bootstrap */
+    justify-content: space-between;
+    align-items: center;
+}
+
+div#alert {
+    flex-grow: 1;
+    max-width: 90%;
+    margin: 0px;
+}
+
+div.hide1 {
+    display: none;
+    /*visibility: hidden;*/
+}
+
+div.alert {
+    margin: 0px;
+}
+
+div#submit button {
+/*    align-self: flex-end;
+    margin: 0 15px 15px 0;*/
+
+    color: #fff;
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+/* FIN FORMULAIRE */
+
+
+/* PAGE CONTENT */
+
+main.wrapper {
+    margin: 15px 15px 0 15px;
+    display: flex !important; /* override bootstrap */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start; /* axe secondaire */
+}
+
+nav {
+    width: 135px;
+    display: flex !important; /* override bootstrap */
+    flex-direction: column;
+    justify-content: space-around; /* axe principal */
+    align-items: center; /* axe secondaire */
+    height: 125px;
+
+    border: 1px solid #3498db;
+    background: #fff;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+nav > a i {
+    color: #000000;
+}
+
+section div.title {
+    color: #FFFFFF;
+    background-color: #2ecc71;
+}
+
+section div.title h2 {
+    font-size: 28px;
+    margin: 10px 0 10px 10px;
+}
+
+section div.content {
+    padding: 10px;
+}
+
+section.content {
+    margin-left: 15px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+
+    border: 1px solid #2ecc71;
+    background: #fff;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+section.content footer {
+    margin-top: auto;
+    align-self: flex-end;
+}
+
+table.table {
+    margin: 0px;
+}
+
+.hide > * {
+    display: none;
+}
+
+/* FIN PAGE CONTENT */
+
+/* FOOTER */
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    background-color: #3498db;
+    height: 50px;
+    display: flex !important; /* override bootstrap */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center; /* axe principal */
+    align-items: center; /* axe secondaire */
+}
+
+footer p {
+    color: #FFFFFF;
+    margin: 0px;
+}
+
+/* FOOTER */
