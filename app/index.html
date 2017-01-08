@@ -1,249 +1,541 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>CADUCEUS - Default Truffle App</title>
     <link href="./bootstrap.min.css" rel='stylesheet' type='text/css'>
     <link href="./font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href="./app.css" rel='stylesheet' type='text/css'>
+    <script src="./form.js"></script>
+    <script src="./table.js"></script>
     <script src="./app.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-  </head>
-  <body>
+</head>
+<body>
 
-    <header>
-        <h1>Caduceus Prototype</h1>
-        <span id="spacing"></span>
-        <div>
-          <img src="./images/metamask-64.png" alt="metamask">
-          <i id="metamask" class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
-        </div>
-    </header>
+<header>
+    <h1>Caduceus Prototype</h1>
+    <span class="spacing"></span>
+    <div>
+        <img src="./images/metamask-64.png" alt="metamask">
+        <i id="metamask" class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+    </div>
+</header>
 
-    <section id="formulaire" class="content" style="margin-top: 15px;">
-      <div class="title">
-        <h2>Formulaire</h2>
-      </div>
-      <div class="content">
+<main class="wrapper">
 
-        <div id="form">
-          <div class="field">
-            <div class="titleField">
-              <h2>Age</h2>
-            </div>
-            <div class="input-group">
-            <span class="input-group-addon">
-              <input type="checkbox" aria-label="Checkbox for following text input" disabled>
-            </span>
-              <input type="text" class="form-control" aria-label="Text input with checkbox" disabled>
-            </div>
-          </div>
-          <div class="field">
-              <div class="titleField">
-                <h2>Blood Pressure</h2>
-              </div>
-              <div class="input-group">
-              <span class="input-group-addon">
-                <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
-              </span>
-              <input type="text" class="form-control" aria-label="Text input with checkbox">
-            </div>
-          </div>
-          <div class="field">
-            <div class="titleField">
-              <h2>Specific Gravity</h2>
-            </div>
-            <div class="input-group">
-            <span class="input-group-addon">
-              <input type="checkbox" aria-label="Checkbox for following text input">
-            </span>
-              <input type="text" class="form-control" aria-label="Text input with checkbox">
-            </div>
-          </div>
-          <div class="field">
-            <div class="titleField">
-              <h2>Albumin</h2>
-            </div>
-            <div class="input-group">
-            <span class="input-group-addon">
-              <input type="checkbox" aria-label="Checkbox for following text input">
-            </span>
-              <input type="text" class="form-control" aria-label="Text input with checkbox">
-            </div>
-          </div>
-          <div class="field">
-            <div class="titleField">
-              <h2>Sugar</h2>
-            </div>
-            <div class="input-group">
-            <span class="input-group-addon">
-              <input type="checkbox" aria-label="Checkbox for following text input">
-            </span>
-              <input type="text" class="form-control" aria-label="Text input with checkbox">
-            </div>
-          </div>
-          <div class="field">
-            <div class="titleField">
-              <h2>Red Blood Cells</h2>
-            </div>
-            <div class="input-group">
-            <span class="input-group-addon">
-              <input type="checkbox" aria-label="Checkbox for following text input">
-            </span>
-              <input type="text" class="form-control" aria-label="Text input with checkbox">
-            </div>
-          </div>
-          <div class="field">
-            <div class="titleField">
-              <h2>Blood Urea</h2>
-            </div>
-            <div class="input-group">
-            <span class="input-group-addon">
-              <input type="checkbox" aria-label="Checkbox for following text input">
-            </span>
-              <input type="text" class="form-control" aria-label="Text input with checkbox">
-            </div>
-          </div>
-          <div class="field">
-            <div class="titleField">
-              <h2>Sodium</h2>
-            </div>
-            <div class="input-group">
-            <span class="input-group-addon">
-              <input type="checkbox" aria-label="Checkbox for following text input">
-            </span>
-              <input type="text" class="form-control" aria-label="Text input with checkbox">
-            </div>
-          </div>
-          <div class="field">
-            <div class="titleField">
-              <h2>Packed Cell Volume</h2>
-            </div>
-            <div class="input-group">
-            <span class="input-group-addon">
-              <input type="checkbox" aria-label="Checkbox for following text input">
-            </span>
-              <input type="text" class="form-control" aria-label="Text input with checkbox">
-            </div>
-          </div>
-          <div class="field">
-            <div class="titleField">
-              <h2>White Blood Cell</h2>
-            </div>
-            <div class="input-group">
-            <span class="input-group-addon">
-              <input type="checkbox" aria-label="Checkbox for following text input">
-            </span>
-              <input type="text" class="form-control" aria-label="Text input with checkbox">
-            </div>
-          </div>
-        </div>
-
-
-
-      </div>
-    </section>
-
-    <main class="wrapper">
-
-      <nav id="navigation">
+    <nav id="navigation">
         <a href="#"><i class="fa fa-user fa-2x" aria-hidden="true"></i>    Patient</a>
         <a href="#"><i class="fa fa-stethoscope fa-2x" aria-hidden="true"></i>     Médecin</a>
-      </nav>
+    </nav>
 
-      <section class="content">
+    <section class="content">
         <div class="title">
-          <h2>Mes données de santé</h2>
+            <h2>Mes données de santé</h2>
         </div>
         <div class="content">
-          <table class="table hide">
-            <thead class="thead-inverse">
-            <tr>
-              <th>Age (years)</th>
-              <th>Blood Pressure (mm/Hg)</th>
-              <th>Specific Gravity</th>
-              <th>Albumin</th>
-              <th>Sugar</th>
-              <th>Red Blood Cells</th>
-              <th>Blood Urea (mgs/dl)</th>
-              <th>Sodium (mEq/L)</th>
-              <th>Packed Cell Volume</th>
-              <th>White Blood Cell (cells/cumm)</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr id="decimal">
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-            </tr>
-            </tbody>
-          </table>
+            <table class="table hide">
+                <thead class="thead-inverse">
+                <tr>
+                    <th>Age (years)</th>
+                    <th>Blood Pressure (mm/Hg)</th>
+                    <th>Specific Gravity</th>
+                    <th>Albumin</th>
+                    <th>Sugar</th>
+                    <th>Blood Glucose Random</th>
+                    <th>Blood Urea (mgs/dl)</th>
+                    <th>Sodium (mEq/L)</th>
+                    <th>Packed Cell Volume</th>
+                    <th>White Blood Cell (cells/cumm)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="decimal">
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                </tr>
+                </tbody>
+            </table>
 
-          <table class="table hide">
-            <thead class="thead-inverse">
-            <tr>
-              <th>Red Blood Cell (millions/cmm)</th>
-              <th>Serum Creatinine (mgs/dl)</th>
-              <th>Potassium (mEq/L)</th>
-              <th>Hemoglob (hemo in gms)</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr id="float">
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-            </tr>
-            </tbody>
-          </table>
+            <table class="table hide">
+                <thead class="thead-inverse">
+                <tr>
+                    <th>Red Blood Cell (millions/cmm)</th>
+                    <th>Serum Creatinine (mgs/dl)</th>
+                    <th>Potassium (mEq/L)</th>
+                    <th>Hemoglob (hemo in gms)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="float">
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                </tr>
+                </tbody>
+            </table>
 
-          <table class="table hide">
-            <thead class="thead-inverse">
-            <tr>
-              <th>Red Blood Cells</th>
-              <th>Pus Cell</th>
-              <th>Pus Cell clumps</th>
-              <th>Bacteria</th>
-              <th>Hypertension</th>
-              <th>Diabetes Mellitus</th>
-              <th>Coronary Artery Disease</th>
-              <th>Appetite</th>
-              <th>Pedal Edema</th>
-              <th>Anemia</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr id="nominal">
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-              <td>?</td>
-            </tr>
-            </tbody>
-          </table>
+            <table class="table hide">
+                <thead class="thead-inverse">
+                <tr>
+                    <th>Red Blood Cells</th>
+                    <th>Pus Cell</th>
+                    <th>Pus Cell clumps</th>
+                    <th>Bacteria</th>
+                    <th>Hypertension</th>
+                    <th>Diabetes Mellitus</th>
+                    <th>Coronary Artery Disease</th>
+                    <th>Appetite</th>
+                    <th>Pedal Edema</th>
+                    <th>Anemia</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="nominal">
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                    <td>?</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
 
-      </section>
-    </main>
+    </section>
+</main>
 
-    <footer>
-      <p>Caduceus Project 2016-2017 by Stefan Angoso, Stéfane Bala, Josph Hé, Antoine Guidis.</p>
-    </footer>
+<section id="formulaire" class="content" style="margin-top: 15px;">
+    <div class="title">
+        <h2>Formulaire</h2>
+    </div>
+    <div class="content">
 
-  </body>
+        <!-- DECIMAL FORM -->
+        <form>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Age</h2>
+                </div>
+                <div class="input-group">
+                            <span class="input-group-addon">
+                                    <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                            </span>
+                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Age" placeholder="30" min="0" max="65535">
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Blood Pressure</h2>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                            <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                    </span>
+                    <select id="bp" class="form-control">
+                        <option>1.005</option>
+                        <option>1.010</option>
+                        <option>1.015</option>
+                        <option>1.020</option>
+                        <option>1.025</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Specific Gravity</h2>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                    </span>
+                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Specific Gravity" placeholder="80" min="0" max="65535">
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Albumin</h2>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                    </span>
+                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Albumin" placeholder="0" min="0" max="65535">
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Sugar</h2>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                    </span>
+                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Sugar" placeholder="0" min="0" max="65535">
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Blood Glucose Random</h2>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                    </span>
+                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Blood Glucose Random" placeholder="120" min="0" max="65535">
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Blood Urea</h2>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                    </span>
+                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Blood Urea" placeholder="50" min="0" max="65535">
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Sodium</h2>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                    </span>
+                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Sodium" placeholder="138" min="0" max="65535">
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Packed Cell Volume</h2>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                    </span>
+                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Packed Cell Volume" placeholder="45" min="0" max="65535">
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>White Blood Cell</h2>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                    </span>
+                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="White Blood Cell" placeholder="8300" min="0" max="65535">
+                </div>
+            </div>
+        </form>
+        <!-- FIN DECIMAL FORM -->
+        <!-- FLOAT FORM -->
+        <form>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Red Blood Cell</h2>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                    </span>
+                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Red Blood Cell" placeholder="un int normal" min="0" step="0.1" max="654.99">
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Serum Creatinine</h2>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                    </span>
+                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Serum Creatinine" placeholder="un int normal" min="0" step="0.1" max="654.99">
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Potassium</h2>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                    </span>
+                    <input type="number" class="form-control" aria-label="Text input with checkbox" name="Potassium" placeholder="un int normal" min="0" step="0.1" max="654.99">
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Hemoglob</h2>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                    </span>
+                    <input type="number" class="form-control" aria-label="Text input with checkbox" name="Hemoglob" placeholder="un int normal" min="0" step="0.1" max="654.99">
+                </div>
+            </div>
+        </form>
+        <!-- FIN FLOAT FORM -->
+        <!-- NOMINAL FLOAT FORM -->
+        <form>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Red Blood Cells</h2>
+                </div>
+                <div class="nominal">
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="rbc" value="65535"> NA
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="rbc" value="1" checked> Normal
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="rbc" value="0"> Abnormal
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Pus Cell</h2>
+                </div>
+                <div class="nominal">
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="pc" value="65535"> NA
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="pc" value="1" checked> Normal
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="pc" value="0"> Abnormal
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Pus Cell clumps</h2>
+                </div>
+                <div class="nominal">
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="pcc" value="65535"> NA
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="pcc" value="1" checked> Normal
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="pcc" value="0"> Abnormal
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Bacteria</h2>
+                </div>
+                <div class="nominal">
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="ba" value="65535"> NA
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="ba" value="1" checked> Normal
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="ba" value="0"> Abnormal
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Hypertension</h2>
+                </div>
+                <div class="nominal">
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="htn" value="65535"> NA
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="htn" value="1" checked> Normal
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="htn" value="0"> Abnormal
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Diabetes Mellitus</h2>
+                </div>
+                <div class="nominal">
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="dm" value="65535"> NA
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="dm" value="1" checked> Normal
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="dm" value="0"> Abnormal
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Coronary Artery Disease</h2>
+                </div>
+                <div class="nominal">
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="cad" value="65535"> NA
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="cad" value="1" checked> Normal
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="cad" value="0"> Abnormal
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Appetite</h2>
+                </div>
+                <div class="nominal">
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="appet" value="65535"> NA
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="appet" value="1" checked> Normal
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="appet" value="0"> Abnormal
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Pedal Edema</h2>
+                </div>
+                <div class="nominal">
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="pe" value="65535"> NA
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="pe" value="1" checked> Normal
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="pe" value="0"> Abnormal
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Anemia</h2>
+                </div>
+                <div class="nominal">
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="ane" value="65535"> NA
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="ane" value="1" checked> Normal
+                        </label>
+                    </div>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="ane" value="0"> Abnormal
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- NOMINAL FLOAT FORM -->
+    </div>
+    <div id="submit">
+        <div id="alert" class="alert alert-danger hide1" role="alert">
+            <p>Oh snap! Les champs suivants ne sont pas remplient : </p>
+        </div>
+        <div class="alert alert-success hide1" role="alert">
+            <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+            <p style="margin: 0px;display: inline;vertical-align: super;">
+                Votre ajout vient d'être envoyer à notre contract! Validation en cours...
+            </p>
+        </div>
+        <span class="spacing"></span>
+        <button type="button" class="btn" onclick="submit()">Envoyer</button>
+    </div>
+</section>
+
+<footer>
+    <p>Caduceus Project 2016-2017 by Stefan Angoso, Stéfane Bala, Josph Hé, Antoine Guidis.</p>
+</footer>
+
+</body>
 </html>

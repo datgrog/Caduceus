@@ -17,6 +17,11 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+p {
+    margin: 0;
+    padding: 0;
+}
+
 a:link, a:visited, a:hover, a:active {
     text-decoration: none; color: #000000;
 }
@@ -42,9 +47,9 @@ header h1 {
     margin: 0px;
 }
 
-header span#spacing {
+span.spacing {
     flex-grow: 1;
-    background-color: #01315a;
+/*    background-color: #01315a;*/
     margin: 0px;
 }
 
@@ -63,18 +68,21 @@ header div i {
 /* FORMULAIRE */
 
 section#formulaire {
-    margin: 15px 15px 0px 15px;
+    margin: 15px;
+    flex-grow: 0;
 }
 
-div#form {
+form {
     display: flex !important; /* override bootstrap */
 }
 
 div.field {
     display: flex;
     flex-direction: column;
-    /*border: 1px solid #000000;*/
     background: #fff;
+    min-width: 110px;
+    flex-grow: 1;
+    /*border: 1px solid #000000;*/
 }
 
 div.titleField {
@@ -92,13 +100,48 @@ div.field div.input-group {
     padding: 10px;
 }
 
+div.nominal {
+    align-self: center;
+}
+
+div#submit {
+    margin: 0 15px 15px 15px;
+    display: flex !important; /* override bootstrap */
+    justify-content: space-between;
+    align-items: center;
+}
+
+div#alert {
+    flex-grow: 1;
+    max-width: 90%;
+    margin: 0px;
+}
+
+div.hide1 {
+    display: none;
+    /*visibility: hidden;*/
+}
+
+div.alert {
+    margin: 0px;
+}
+
+div#submit button {
+/*    align-self: flex-end;
+    margin: 0 15px 15px 0;*/
+
+    color: #fff;
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
 /* FIN FORMULAIRE */
 
 
 /* PAGE CONTENT */
 
 main.wrapper {
-    margin: 15px 15px 0px 15px;
+    margin: 15px 15px 0 15px;
     display: flex !important; /* override bootstrap */
     flex-direction: row;
     flex-wrap: nowrap;
@@ -141,6 +184,7 @@ section div.content {
 section.content {
     margin-left: 15px;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
 
     border: 1px solid #2ecc71;
@@ -159,7 +203,7 @@ table.table {
     margin: 0px;
 }
 
-table.hide > * {
+.hide > * {
     display: none;
 }
 
