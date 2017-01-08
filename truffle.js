@@ -4,6 +4,12 @@ module.exports = {
     "app.js": [
       "javascripts/app.js"
     ],
+    "form.js": [
+      "javascripts/form.js"
+    ],
+    "table.js": [
+      "javascripts/table.js"
+    ],
     "app.css": [
       "stylesheets/app.css"
     ],
