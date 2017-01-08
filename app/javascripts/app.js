@@ -50,6 +50,23 @@ function submit() {
     }
 }
 
+// TESTING PURPOSE
+function updateData(patientId) {
+    return new Promise(function(resolve) {
+
+        caduceus.getKidneyDataFromPatientId(patientId).then(function (kidneyData) {
+            resolve(kidneyData);
+        }).catch(function(e) {
+            console.log(e);
+            setStatus("Error getMyKidneyData(); see log.");
+        });
+    }).then(updateTable)
+      .then(toggleTable)
+      .catch(function (error) {
+          console.log(error);
+      })
+}
+
 window.onload = function() {
     // form.js
     radios = document.getElementsByTagName("input");
