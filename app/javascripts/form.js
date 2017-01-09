@@ -24,6 +24,7 @@ function isNotEmptyDecimalFloat() {
             msg += radios[x].name+", ";
         }
     }
+    msg = msg.substring(0, msg.length - 2);
     alert.firstElementChild.innerHTML = msg;
 
     /*
@@ -53,7 +54,7 @@ function getDecimalFloat() {
 
             // field set to 'NA'
             if (radios[x].disabled === true) {
-                values.push(65535);
+                values.push(NA_VALUE);
             }
             // field not empty and decimal
             else {
@@ -79,9 +80,20 @@ function getNominal() {
     return values;
 }
 
-// get specific blood pressure field
-function getBloodPressure() {
-    let bp = document.getElementById("bp");
+// get specific gravity, albumin and sugar
+function getOptionsValues() {
+    let optionsValues = [];
+    let sg = document.getElementById("sg");
+    let al = document.getElementById("al");
+    let su = document.getElementById("su");
 
-    return (bp.selectedIndex * 5) + 5;
+    optionsValues.push(isRelatedCheckboxChecked(sg) ? NA_VALUE : ((sg.selectedIndex * 5) + 5) );
+    optionsValues.push(isRelatedCheckboxChecked(al) ? NA_VALUE : (al.selectedIndex + 1) );
+    optionsValues.push(isRelatedCheckboxChecked(su) ? NA_VALUE : (su.selectedIndex + 1) );
+
+    return optionsValues;
+
+    function isRelatedCheckboxChecked(el) {
+        return el.previousElementSibling.firstElementChild.checked;
+    }
 }
