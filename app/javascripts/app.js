@@ -1,4 +1,6 @@
 const caduceus = Caduceus.deployed();
+const NA_VALUE = 65535;
+
 var accounts;
 var account;
 
@@ -30,7 +32,7 @@ function sendMyKidneyData(kidneyData) {
         }).catch(function(e) {
             console.log(e);
             alertValidation.removeChild(alertValidation.firstElementChild);
-            alertValidation.firstElementChild.innerHTML = "OUBS!!";
+            alertValidation.firstElementChild.innerHTML = "OUPS!!";
             setStatus("Error sendMyKidneyData(); see log.");
         });
     });
@@ -39,12 +41,13 @@ function sendMyKidneyData(kidneyData) {
 function submit() {
     if(isNotEmptyDecimalFloat()) {
         // merge decimal float and nominal value
-        var kidneyData = getDecimalFloat().concat(getNominal());
-        // insert blood pressure
-        kidneyData.splice(1, 0, getBloodPressure());
-
+        let kidneyData = getDecimalFloat().concat(getNominal());
+        // insert specific gravity, albumin and sugar
+        kidneyData.splice(2, 0, getOptionsValues()[0], getOptionsValues()[1], getOptionsValues()[2]);
+        console.log('array to send');
+        console.log(kidneyData);
         sendMyKidneyData(kidneyData).then(function () {
-            console.log('done bro go reload or clear form and updateTable');
+            console.log('done go reload or clear form and updateTable');
         })
 
     }

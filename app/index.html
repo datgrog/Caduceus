@@ -135,7 +135,7 @@
                             <span class="input-group-addon">
                                     <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
                             </span>
-                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Age" placeholder="30" min="0" max="65535">
+                    <input type="number" class="form-control" aria-label="Text input with checkbox" name="Age" placeholder="30" min="0" max="65535">
                 </div>
             </div>
             <div class="field">
@@ -144,9 +144,20 @@
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">
+                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                    </span>
+                    <input type="number" class="form-control" aria-label="Text input with checkbox" name="Blood Pressure" placeholder="80" min="0" max="65535">
+                </div>
+            </div>
+            <div class="field">
+                <div class="titleField">
+                    <h2>Specific Gravity</h2>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
                             <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
                     </span>
-                    <select id="bp" class="form-control">
+                    <select id="sg" class="form-control">
                         <option>1.005</option>
                         <option>1.010</option>
                         <option>1.015</option>
@@ -157,24 +168,19 @@
             </div>
             <div class="field">
                 <div class="titleField">
-                    <h2>Specific Gravity</h2>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
-                    </span>
-                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Specific Gravity" placeholder="80" min="0" max="65535">
-                </div>
-            </div>
-            <div class="field">
-                <div class="titleField">
                     <h2>Albumin</h2>
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">
-                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                            <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
                     </span>
-                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Albumin" placeholder="0" min="0" max="65535">
+                    <select id="al" class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
                 </div>
             </div>
             <div class="field">
@@ -183,9 +189,15 @@
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">
-                        <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
+                            <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
                     </span>
-                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Sugar" placeholder="0" min="0" max="65535">
+                    <select id="su" class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
                 </div>
             </div>
             <div class="field">
@@ -196,7 +208,7 @@
                     <span class="input-group-addon">
                         <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
                     </span>
-                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Blood Glucose Random" placeholder="120" min="0" max="65535">
+                    <input type="number" class="form-control" aria-label="Text input with checkbox" name="Blood Glucose Random" placeholder="120" min="0" max="65535">
                 </div>
             </div>
             <div class="field">
@@ -207,7 +219,7 @@
                     <span class="input-group-addon">
                         <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
                     </span>
-                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Blood Urea" placeholder="50" min="0" max="65535">
+                    <input type="number" class="form-control" aria-label="Text input with checkbox" name="Blood Urea" placeholder="50" min="0" max="65535">
                 </div>
             </div>
             <div class="field">
@@ -218,7 +230,7 @@
                     <span class="input-group-addon">
                         <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
                     </span>
-                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Sodium" placeholder="138" min="0" max="65535">
+                    <input type="number" class="form-control" aria-label="Text input with checkbox" name="Sodium" placeholder="138" min="0" max="65535">
                 </div>
             </div>
             <div class="field">
@@ -229,7 +241,7 @@
                     <span class="input-group-addon">
                         <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
                     </span>
-                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Packed Cell Volume" placeholder="45" min="0" max="65535">
+                    <input type="number" class="form-control" aria-label="Text input with checkbox" name="Packed Cell Volume" placeholder="45" min="0" max="65535">
                 </div>
             </div>
             <div class="field">
@@ -240,7 +252,7 @@
                     <span class="input-group-addon">
                         <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
                     </span>
-                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="White Blood Cell" placeholder="8300" min="0" max="65535">
+                    <input type="number" class="form-control" aria-label="Text input with checkbox" name="White Blood Cell" placeholder="8300" min="0" max="65535">
                 </div>
             </div>
         </form>
@@ -255,7 +267,7 @@
                     <span class="input-group-addon">
                         <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
                     </span>
-                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Red Blood Cell" placeholder="un int normal" min="0" step="0.1" max="654.99">
+                    <input type="number" class="form-control" aria-label="Text input with checkbox" name="Red Blood Cell" placeholder="un int normal" min="0" step="0.1" max="654.99">
                 </div>
             </div>
             <div class="field">
@@ -266,7 +278,7 @@
                     <span class="input-group-addon">
                         <input type="checkbox" aria-label="Checkbox for following text input" onclick="disableInput(this)">
                     </span>
-                    <input type="number" class="form-control" value="16" aria-label="Text input with checkbox" name="Serum Creatinine" placeholder="un int normal" min="0" step="0.1" max="654.99">
+                    <input type="number" class="form-control" aria-label="Text input with checkbox" name="Serum Creatinine" placeholder="un int normal" min="0" step="0.1" max="654.99">
                 </div>
             </div>
             <div class="field">
@@ -520,7 +532,7 @@
     </div>
     <div id="submit">
         <div id="alert" class="alert alert-danger hide1" role="alert">
-            <p>Oh snap! Les champs suivants ne sont pas remplient : </p>
+            <p>Oh snap! Les champs suivants ne sont pas remplies : </p>
         </div>
         <div class="alert alert-success hide1" role="alert">
             <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
