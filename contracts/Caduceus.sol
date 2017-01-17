@@ -2,13 +2,13 @@ pragma solidity ^0.4.7;
 
 contract Caduceus {
 
-/* uint16[24] kidneyData;
- * ----------------------------------------------------------------------------------------------------------------------------------------
- * |                   DECIMAL VALUE                     |      FLOAT VALUE     |               NOMINAL VALUE                             |
- * ----------------------------------------------------------------------------------------------------------------------------------------
- * |  0  | 1  | 2  | 3  | 4  | 5   | 6  | 7   | 8   | 9  | 10 | 11 | 12  | 13   | 14  | 15 | 16  | 17 | 18  | 19 | 20  | 21    | 22 | 23  |
- * | age | bp | sg | al | su | bgr | bu | sod | pcv | wc | rc | sc | pot | hemo | rbc | pc | pcc | ba | htn | dm | cad | appet | pe | ane |
- * ----------------------------------------------------------------------------------------------------------------------------------------
+/* uint16[25] kidneyData;
+ * -------------------------------------------------------------------------------------------------------------------------------------------------
+ * |                   DECIMAL VALUE                     |      FLOAT VALUE     |               NOMINAL VALUE                             | RESULT |
+ * -------------------------------------------------------------------------------------------------------------------------------------------------
+ * |  0  | 1  | 2  | 3  | 4  | 5   | 6  | 7   | 8   | 9  | 10 | 11 | 12  | 13   | 14  | 15 | 16  | 17 | 18  | 19 | 20  | 21    | 22 | 23  |   24   |
+ * | age | bp | sg | al | su | bgr | bu | sod | pcv | wc | rc | sc | pot | hemo | rbc | pc | pcc | ba | htn | dm | cad | appet | pe | ane |   res  |
+ * -------------------------------------------------------------------------------------------------------------------------------------------------
  *
  * EXEMPLE :
  *                   | age | bp | sg | al | su | bgr | bu | sod | pcv | wc | rc | sc | pot | hemo | rbc | pc | pcc | ba | htn | dm | cad | appet | pe | ane |
@@ -17,36 +17,35 @@ contract Caduceus {
  */
 
     struct Patient {
-        address     contact;
-        uint16[24]  kidneyData;
+        uint16[25]  kidneyData;
     }
 
-    uint nextPatientId;
-    mapping (uint256 => Patient) private patients;
+    // datascience backend
+    address oracle = 0x38bbe4a93b886224e25f8df5f3dc393f9cc26cd8;
+    mapping (address => Patient) private patients;
+
+    modifier onlyOracle() {
+        if (msg.sender != oracle) throw;
+        _;
+    }
 
     function Caduceus() {
-        // addPatient([60,80,25,0,0,131,10,146,41,10700,510,50,500,1450,1,1,0,0,0,0,0,1,0,0]);
+        // addPatient([60,80,25,0,0,131,10,146,41,10700,510,50,500,1450,1,1,0,0,0,0,0,1,0,0, 65535]);
         // gas: 270000
     }
 
-    function getNextPatientId() constant returns (uint256) {
-        return nextPatientId;
-    }
-
     function addPatient(uint16[24] patientData) {
-        var patient = patients[nextPatientId];
-
-        patient.contact = msg.sender;
+        var patient = patients[msg.sender];
         patient.kidneyData = patientData;
-
-        nextPatientId++;
     }
 
-    function getKidneyDataFromPatientId(uint256 patientId) constant returns (uint16[24] kidneyData) {
-        kidneyData = patients[patientId].kidneyData;
+
+    function setKidneyDataResult(uint16 patientResult, address patientAddress)  {
+        patients[patientAddress].kidneyData[24] = patientResult;
     }
 
-    function getContactFromPatientId(uint256 patientId) constant returns (address contact) {
-        contact = patients[patientId].contact;
+    function getKidneyData() constant returns (uint16[25] kidneyData) {
+        kidneyData = patients[msg.sender].kidneyData;
     }
+
 }
