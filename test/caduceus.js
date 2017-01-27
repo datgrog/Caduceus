@@ -1,4 +1,5 @@
 contract('Caduceus', function(accounts) {
+    console.log('account : ' + accounts[0]);
     it("should have the mapping properties initialise with 0 values", function() {
         var caduceus = Caduceus.deployed();
 

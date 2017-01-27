@@ -150,7 +150,7 @@ main.wrapper {
 }
 
 nav {
-    width: 135px;
+    min-width: 150px;
     display: flex !important; /* override bootstrap */
     flex-direction: column;
     justify-content: space-around; /* axe principal */
@@ -206,6 +206,10 @@ table.table {
 
 .hide > * {
     display: none;
+}
+
+#kidneyDataRes p {
+    display: inline;
 }
 
 /* FIN PAGE CONTENT */

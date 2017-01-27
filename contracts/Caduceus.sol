@@ -37,15 +37,28 @@ contract Caduceus {
     function addPatient(uint16[24] patientData) {
         var patient = patients[msg.sender];
         patient.kidneyData = patientData;
+        // reset result
+        patient.kidneyData[24] = 65535;
     }
-
 
     function setKidneyDataResult(uint16 patientResult, address patientAddress)  {
         patients[patientAddress].kidneyData[24] = patientResult;
     }
 
+    function getKidneyData(address myAddr) constant returns (uint16[25] kidneyData) {
+        kidneyData = patients[myAddr].kidneyData;
+    }
+
+/*  BUG
+    getMsgSender() constant returns msg.sender
+    After deploying my contract with truffle, using both Geth or Truffle console,
+    I received my eth.coinbase address when calling getMsgSender which is good.
+    After deploying my contract with http://remix.ethereum.org/ aka solidity online configured with MetaMask(injected web3),
+    I received my accounts[0] address when calling getMsgSender which is good.
+    When truffle serve this func() return an address I'm not aware of
     function getKidneyData() constant returns (uint16[25] kidneyData) {
         kidneyData = patients[msg.sender].kidneyData;
     }
+*/
 
 }

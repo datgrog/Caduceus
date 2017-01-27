@@ -34,6 +34,9 @@
             <h2>Mes données de santé</h2>
         </div>
         <div class="content">
+            <div id="alertData" class="alert alert-danger hide1" role="alert">
+                <p>Oh snap! Vous n'avez pas encore de donnée dans votre carnet ! Veuillez remplir le formulaire ci-dessous</p>
+            </div>
             <table class="table hide">
                 <thead class="thead-inverse">
                 <tr>
@@ -114,8 +117,10 @@
                 </tr>
                 </tbody>
             </table>
+            <div id="kidneyDataRes" class="hide1">
+                <p>Prédiction : <p id="prediction"></p></p>
+            </div>
         </div>
-
     </section>
 </main>
 
@@ -529,7 +534,7 @@
         <div class="alert alert-success hide1" role="alert">
             <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
             <p style="margin: 0px;display: inline;vertical-align: super;">
-                Votre ajout vient d'être envoyer à notre contract! Validation en cours...
+                Votre ajout vient d'être envoyé à notre contract! Validation en cours...
             </p>
         </div>
         <span class="spacing"></span>
@@ -538,7 +543,7 @@
 </section>
 
 <footer>
-    <p>Caduceus Project 2016-2017 by Stefan Angoso, Stéfane Bala, Josph Hé, Antoine Guidis.</p>
+    <p>Caduceus Project 2016-2017 by Stefan Angoso, Joseph He, Stéphane Bala, Antoine Guidis.</p>
 </footer>
 
 </body>

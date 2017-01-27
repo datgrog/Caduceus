@@ -6,12 +6,38 @@ var account;
 
 var radios;
 var alert;
+var prediction;
 
 function getMyKidneyData() {
-    return new Promise(function(resolve) {
+    return new Promise(function(resolve, reject) {
+        let isInitialized = false;
 
-        caduceus.getKidneyDataFromPatientId(2).then(function (kidneyData) {
-            resolve(kidneyData);
+        console.log('current account : ' + account);
+        caduceus.getKidneyData(account).then(function (kidneyData) {
+            // isInitialized ?
+            for (dataValue of kidneyData) {
+                if (dataValue.c[0] !== 0) {
+                    isInitialized = true;
+                    break;
+                }
+            }
+            console.log('isInitialized : ' + isInitialized);
+
+            if (isInitialized) {
+                document.getElementById('alertData').className = 'alert alert-danger hide1';
+                document.getElementById('kidneyDataRes').className = '';
+                if (65535 == kidneyData[24]) {
+                    prediction.innerHTML = "La prédiction n'est pas encore disponible, réessayer plus tard";
+                } else {
+                    prediction.innerHTML = kidneyData[24].toString() + "%";
+                }
+                console.log(kidneyData);
+                resolve(kidneyData);
+            } else {
+                document.getElementById('alertData').className = 'alert alert-danger';
+                document.getElementById('kidneyDataRes').className = 'hide1';
+            }
+
         }).catch(function(e) {
             console.log(e);
             setStatus("Error getMyKidneyData(); see log.");
@@ -48,16 +74,21 @@ function submit() {
         console.log(kidneyData);
         sendMyKidneyData(kidneyData).then(function () {
             console.log('done go reload or clear form and updateTable');
+            return getMyKidneyData()
+                .then(updateTable)
+                .then(toggleTable)
+                .catch(function (error) {
+                    console.log(error);
+                })
         })
 
     }
 }
 
-// TESTING PURPOSE
-function updateData(patientId) {
+function updateData(customAdress) {
     return new Promise(function(resolve) {
-
-        caduceus.getKidneyDataFromPatientId(patientId).then(function (kidneyData) {
+        console.log('wtf ?? account : ' + customAdress);
+        caduceus.getKidneyData(customAdress).then(function (kidneyData) {
             resolve(kidneyData);
         }).catch(function(e) {
             console.log(e);
@@ -74,6 +105,7 @@ window.onload = function() {
     // form.js
     radios = document.getElementsByTagName("input");
     alert = document.getElementById("alert");
+    prediction = document.getElementById('prediction');
 
     // table.js
     DOMtable.push(document.getElementById('decimal'));
