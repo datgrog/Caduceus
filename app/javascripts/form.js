@@ -56,9 +56,15 @@ function getDecimalFloat() {
             if (radios[x].disabled === true) {
                 values.push(NA_VALUE);
             }
-            // field not empty and decimal
+            // float
+            else if (radios[x].name === "Red Blood Cell" || radios[x].name === "Serum Creatinine"
+                || radios[x].name === "Potassium" || radios[x].name === "Hemoglob") {
+                currentInputValue = parseInt(currentInputValue.replace(/\./, ''));
+                values.push(parseInt(currentInputValue));
+            }
+            // decimal
             else {
-                values.push(parseInt(radios[x].value));
+                values.push(parseInt(currentInputValue));
             }
             // TODO Si on recup une valeur float on la represente comme specifie dans le contrat avec * 100
 

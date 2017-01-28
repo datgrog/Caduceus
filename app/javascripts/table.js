@@ -29,7 +29,11 @@ function updateTable(kidneyData) {
             } else {
                 switch(kidneyDataIdx) {
                     case 2:
-                        DOMtable[tableIndex].children[dataIdx].innerHTML = '1.0'+currentKidneyDataValue;
+                        if (5 == currentKidneyDataValue) {
+                            DOMtable[tableIndex].children[dataIdx].innerHTML = '1.005';
+                        } else {
+                            DOMtable[tableIndex].children[dataIdx].innerHTML = '1.0'+currentKidneyDataValue;
+                        }
                         break;
                     case 10:
                     case 11:
