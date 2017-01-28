@@ -94,8 +94,12 @@ function getOptionsValues() {
     let su = document.getElementById("su");
 
     optionsValues.push(isRelatedCheckboxChecked(sg) ? NA_VALUE : ((sg.selectedIndex * 5) + 5) );
+    optionsValues.push(isRelatedCheckboxChecked(al) ? NA_VALUE : al.selectedIndex );
+    optionsValues.push(isRelatedCheckboxChecked(su) ? NA_VALUE : su.selectedIndex );
+    /*
     optionsValues.push(isRelatedCheckboxChecked(al) ? NA_VALUE : (al.selectedIndex + 1) );
     optionsValues.push(isRelatedCheckboxChecked(su) ? NA_VALUE : (su.selectedIndex + 1) );
+    */
 
     return optionsValues;
 
