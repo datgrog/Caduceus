@@ -46,6 +46,23 @@ function getMyKidneyData() {
 
 }
 
+function getPrediction() {
+    caduceus.getKidneyData(account).then(function (kidneyData) {
+
+        console.log(kidneyData);
+        console.log('prediction current value : ' + kidneyData[24].toString());
+        if (65535 == kidneyData[24]) {
+            prediction.innerHTML = "La prédiction n'est pas encore disponible, réessayer plus tard";
+        } else {
+            prediction.innerHTML = kidneyData[24].toString() + "%";
+        }
+
+    }).catch(function(e) {
+        console.log(e);
+        setStatus("Error getMyKidneyData(); see log.");
+    });
+}
+
 function sendMyKidneyData(kidneyData) {
     return new Promise(function(resolve) {
         alertValidation = alert.nextElementSibling;

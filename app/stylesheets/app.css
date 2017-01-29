@@ -208,8 +208,21 @@ table.table {
     display: none;
 }
 
-#kidneyDataRes p {
+div#kidneyDataRes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+div#kidneyDataRes p {
     display: inline;
+}
+
+div#kidneyDataRes button {
+    color: #fff;
+    background-color: #2ecc71;
+    border-color: #2ecc71;
 }
 
 /* FIN PAGE CONTENT */
