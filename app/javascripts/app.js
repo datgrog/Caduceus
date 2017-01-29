@@ -72,7 +72,7 @@ function submit() {
         kidneyData.splice(2, 0, getOptionsValues()[0], getOptionsValues()[1], getOptionsValues()[2]);
         console.log('array to send');
         console.log(kidneyData);
-/*        sendMyKidneyData(kidneyData).then(function () {
+        sendMyKidneyData(kidneyData).then(function () {
             console.log('done go reload or clear form and updateTable');
             return getMyKidneyData()
                 .then(updateTable)
@@ -80,7 +80,7 @@ function submit() {
                 .catch(function (error) {
                     console.log(error);
                 })
-        })*/
+        })
 
     }
 }
